@@ -1,15 +1,16 @@
-import java.util.*;
-
 class Solution {
     public void reverseString(char[] s) {
-        int x = s.length;
-        Vector<Character> c = new Vector<>();
-
-        for(int  i = x-1;i>=0;i--){
-            c.add(s[i]);
+        int left = 0;
+        int right = s.length - 1;
+        while(left < right){
+            swap(s,left,right);
+            left++;
+            right--;
         }
-        for(int i = 0;i<x;i++){
-            s[i] = c.get(i);
-        }
+    }
+    public void swap(char[] s ,int left,int right){
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp; 
     }
 }
